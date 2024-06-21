@@ -148,6 +148,5 @@ if ($_POST) {
         </label>
     </fieldset>
 </form>
-<footer>Powered by <a href="https://github.com/svandragt/daily-tasks">Three Tasks</a></footer>
 </body>
 </html>
