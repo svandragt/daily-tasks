@@ -8,7 +8,6 @@ use RedBeanPHP\R;
 use RedBeanPHP\RedException\SQL;
 
 # Bootstrap
-header('Cache-Control: max-age=300');
 R::setup('sqlite:data.db');
 
 $date = date('Y-m-d');
@@ -96,22 +95,22 @@ if ($_POST) {
     <fieldset class="tasklist">
         <legend>Tasks</legend>
         <label class="task-item">
-            <input type="checkbox" name="done1" id="done1" <?= $task->done1 ?>>
-            <input type="text" name="task1" id="task1" value="<?= $task->task1 ?>">
+            <input tabindex=90 type="checkbox" name="done1" id="done1" <?= $task->done1 ?>>
+            <input tabindex=20 type="text" name="task1" id="task1" value="<?= $task->task1 ?>">
         </label>
         <label class="task-item">
-            <input type="checkbox" name="done2" id="done2" <?= $task->done2 ?>>
-            <input type="text" name="task2" id="task2" value="<?= $task->task2 ?>">
+            <input tabindex=91 type="checkbox" name="done2" id="done2" <?= $task->done2 ?>>
+            <input tabindex=21 type="text" name="task2" id="task2" value="<?= $task->task2 ?>">
         </label>
         <label class="task-item">
-            <input type="checkbox" name="done3" id="done3" <?= $task->done3 ?>>
-            <input type="text" name="task3" id="task3" value="<?= $task->task3 ?>">
+            <input tabindex=92 type="checkbox" name="done3" id="done3" <?= $task->done3 ?>>
+            <input tabindex=22 type="text" name="task3" id="task3" value="<?= $task->task3 ?>">
         </label>
     </fieldset>
     <fieldset class="meta">
         <legend>Notes</legend>
         <label class="task-item">
-            <textarea name="notes" id="notes"><?= $task->notes ?></textarea>
+            <textarea tabindex=30 name="notes" id="notes"><?= $task->notes ?></textarea>
         </label>
     </fieldset>
 </form>
