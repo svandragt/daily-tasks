@@ -60,7 +60,7 @@ if ($_POST) {
         }
 
         label input {
-             vertical-align: middle;
+            vertical-align: middle;
         }
 
         h2 {
@@ -90,7 +90,7 @@ if ($_POST) {
 </head>
 <body>
 <form method="post" hx-post="/" hx-trigger="input delay:2s" hx-swap="outerHTML">
-    <h1>Daily Tasks for <?= $task->date ?></h1>
+    <h1>Three Tasks for <?= $task->date ?></h1>
 
     <fieldset class="tasklist">
         <legend>Tasks</legend>
@@ -117,8 +117,10 @@ if ($_POST) {
 </form>
 <script>
     // hide submit if htmx is loaded
-    if (htmx !== undefined) {
-        document.querySelector('#submit').style.display = 'none';
+    window.onload = function () {
+        if (htmx !== undefined) {
+            document.querySelector('#submit').style.display = 'none';
+        }
     }
 </script>
 </body>
