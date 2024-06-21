@@ -74,13 +74,11 @@ if ($_POST) {
             text-align: center;
             font-size: .75rem;
             opacity: 75%;
-    position: fixed;
-    left: 0;
-    bottom: 0.5rem;
-    max-width: 65ch;
-    text-align: center;
-    padding: 0 10px;
-
+            position: fixed;
+            left: 0;
+            bottom: 0.5rem;
+            max-width: 65ch;
+            padding: 0 10px;
         }
 
         label {
