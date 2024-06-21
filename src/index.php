@@ -56,6 +56,11 @@ if ($_POST) {
 
         label {
             display: block;
+            margin-bottom: 1rem;
+        }
+
+        label input {
+             vertical-align: middle;
         }
 
         h2 {
@@ -104,7 +109,7 @@ if ($_POST) {
     </fieldset>
     <fieldset class="meta">
         <legend>Notes</legend>
-        <label class="task-item"><strong>Notes</strong>
+        <label class="task-item">
             <textarea name="notes"><?= $task->notes ?></textarea>
         </label>
     </fieldset>
