@@ -40,7 +40,8 @@ if ($_POST) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Daily Tasks</title>
-    <script src="htmx.min.js?2.0.0"></script>
+    <script src="htmx.min.js?1.9.2"></script>
+    <script src="idiomorph-ext.min.js"></script>
     <style>
         input[type=checkbox] {
             cursor: pointer;
@@ -89,39 +90,30 @@ if ($_POST) {
     </style>
 </head>
 <body>
-<form method="post" hx-post="/" hx-trigger="input delay:2s" hx-swap="outerHTML">
+<form method="post" hx-post="/" hx-trigger="input delay:1s" hx-swap="morph:{ignoreActiveValue:true}">
     <h1>Three Tasks for <?= $task->date ?></h1>
 
     <fieldset class="tasklist">
         <legend>Tasks</legend>
         <label class="task-item">
-            <input type="checkbox" name="done1" <?= $task->done1 ?>>
-            <input type="text" name="task1" value="<?= $task->task1 ?>">
+            <input type="checkbox" name="done1" id="done1" <?= $task->done1 ?>>
+            <input type="text" name="task1" id="task1" value="<?= $task->task1 ?>">
         </label>
         <label class="task-item">
-            <input type="checkbox" name="done2" <?= $task->done2 ?>>
-            <input type="text" name="task2" value="<?= $task->task2 ?>">
+            <input type="checkbox" name="done2" id="done2" <?= $task->done2 ?>>
+            <input type="text" name="task2" id="task2" value="<?= $task->task2 ?>">
         </label>
         <label class="task-item">
-            <input type="checkbox" name="done3" <?= $task->done3 ?>>
-            <input type="text" name="task3" value="<?= $task->task3 ?>">
+            <input type="checkbox" name="done3" id="done3" <?= $task->done3 ?>>
+            <input type="text" name="task3" id="task3" value="<?= $task->task3 ?>">
         </label>
     </fieldset>
     <fieldset class="meta">
         <legend>Notes</legend>
         <label class="task-item">
-            <textarea name="notes"><?= $task->notes ?></textarea>
+            <textarea name="notes" id="notes"><?= $task->notes ?></textarea>
         </label>
     </fieldset>
-    <p><input type="submit" id="submit"></p>
 </form>
-<script>
-    // hide submit if htmx is loaded
-    window.onload = function () {
-        if (htmx !== undefined) {
-            document.querySelector('#submit').style.display = 'none';
-        }
-    }
-</script>
 </body>
 </html>
