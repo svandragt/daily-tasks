@@ -53,13 +53,13 @@ if ($_POST) {
         }
 
         body {
-            margin:0;
+            margin: 0;
             min-height: 98vmin;
             padding: 1rem;
             max-width: 65ch;
             background: white;
             font: 16px/1.5 "Inter", sans-serif;
-            box-shadow: rebeccapurple 0px 0px 20px;
+            box-shadow: rebeccapurple 0 0 20px;
         }
 
         fieldset {
@@ -67,6 +67,20 @@ if ($_POST) {
             border: 1px dashed purple;
             font-weight: bold;
             color: purple;
+        }
+
+        footer {
+            margin: 0 auto;
+            text-align: center;
+            font-size: .75rem;
+            opacity: 75%;
+    position: fixed;
+    left: 0;
+    bottom: 0.5rem;
+    max-width: 65ch;
+    text-align: center;
+    padding: 0 10px;
+
         }
 
         label {
@@ -82,14 +96,18 @@ if ($_POST) {
             width: 100%;
             height: 15rem;
             border-color: black;
-            border-width: 0px;
+            border-width: 0 0 0 0;
         }
 
         input {
-            min-width: 2em;
             height: 2em;
+            min-width: 2em;
             border-color: black;
             border-width: 1px;
+        }
+
+        input, textarea {
+            font: 0.875em/1.2em "JetBrains Mono", "Roboto Mono", monospace;
         }
 
         input[type=text] {
@@ -98,7 +116,7 @@ if ($_POST) {
         }
 
         h1 {
-            margin-top:0;
+            margin-top: 0;
             font-weight: normal;
         }
 
@@ -131,5 +149,6 @@ if ($_POST) {
         </label>
     </fieldset>
 </form>
+<footer>Powered by <a href="https://github.com/svandragt/daily-tasks">Three Tasks</a></footer>
 </body>
 </html>
