@@ -1,6 +1,78 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "path:/home/sander/dev/php/three-things/.devbox/virtenv/php/flake": {
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "path": "/nix/store/gk8hgs8r6bw2ds81k0clr6d9wi9c6y23-php-with-extensions-8.3.8",
+              "default": true
+            }
+          ]
+        }
+      }
+    },
+    "path:/home/sander/dev/php/three-things/.devbox/virtenv/php/flake#composer": {
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "path": "/nix/store/pn40a3i9mjq3bnlyc4qmvri0xrrisc2c-composer-2.7.6",
+              "default": true
+            }
+          ]
+        }
+      }
+    },
+    "php83Extensions.xdebug@latest": {
+      "last_modified": "2024-05-22T06:18:38Z",
+      "resolved": "github:NixOS/nixpkgs/3f316d2a50699a78afe5e77ca486ad553169061e#php83Extensions.xdebug",
+      "source": "devbox-search",
+      "version": "3.3.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wdhjx9v469xfb7bw6v9i504fkf34vsvr-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wdhjx9v469xfb7bw6v9i504fkf34vsvr-php-xdebug-3.3.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8yfplp92w7hcpm2ivbvky41qxd06jl9d-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8yfplp92w7hcpm2ivbvky41qxd06jl9d-php-xdebug-3.3.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ydl5dhq94ssmwdyd39dn716yi5v079fj-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ydl5dhq94ssmwdyd39dn716yi5v079fj-php-xdebug-3.3.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/da5j6nb10w7ibdc1pif7mi7znz395158-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/da5j6nb10w7ibdc1pif7mi7znz395158-php-xdebug-3.3.2"
+        }
+      }
+    },
     "php@8.3": {
       "last_modified": "2024-06-07T15:28:25Z",
       "plugin_version": "0.0.3",
