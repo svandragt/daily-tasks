@@ -38,7 +38,7 @@ if ($_POST) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Daily Tasks</title>
+    <title>Three Tasks for <?= $date ?></title>
     <script src="htmx.min.js?1.9.2"></script>
     <script src="idiomorph-ext.min.js"></script>
     <style>
@@ -46,12 +46,27 @@ if ($_POST) {
             cursor: pointer;
         }
 
+        html {
+            background: #9999cc;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
+            margin:0;
+            min-height: 98vmin;
+            padding: 1rem;
             max-width: 65ch;
+            background: white;
+            font: 16px/1.5 "Inter", sans-serif;
+            box-shadow: rebeccapurple 0px 0px 20px;
         }
 
         fieldset {
             margin-bottom: 2rem;
+            border: 1px dashed purple;
+            font-weight: bold;
+            color: purple;
         }
 
         label {
@@ -63,26 +78,28 @@ if ($_POST) {
             vertical-align: middle;
         }
 
-        h2 {
-            margin-top: 0;
-        }
-
         textarea {
             width: 100%;
-            height: 10em;
+            height: 15rem;
             border-color: black;
-            border-width: 2px;
+            border-width: 0px;
         }
 
         input {
             min-width: 2em;
             height: 2em;
             border-color: black;
-            border-width: 2px;
+            border-width: 1px;
         }
 
         input[type=text] {
             width: 80%;
+            border-width: 0 0 1px 0;
+        }
+
+        h1 {
+            margin-top:0;
+            font-weight: normal;
         }
 
 
@@ -110,7 +127,7 @@ if ($_POST) {
     <fieldset class="meta">
         <legend>Notes</legend>
         <label class="task-item">
-            <textarea tabindex=30 name="notes" id="notes"><?= $task->notes ?></textarea>
+            <textarea tabindex=10 name="notes" id="notes"><?= $task->notes ?></textarea>
         </label>
     </fieldset>
 </form>
