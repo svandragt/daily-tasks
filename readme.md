@@ -16,9 +16,9 @@ Then you can run `composer run serve` to load up the local server
 
 ## Media
 
-Prototype:
+Screenshot:
 
-https://github.com/svandragt/daily-tasks/assets/594871/05183515-56bd-4ab8-9fa6-4dd81296641b
+![image](https://github.com/svandragt/daily-tasks/assets/594871/8b8aebf7-d0fb-41b8-9e74-63a65eecc5f2)
 
 Printout version:
 
