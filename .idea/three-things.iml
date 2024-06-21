@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="Threes\" />
+      <sourceFolder url="file://$MODULE_DIR$/.devbox/nix/profile/default-1-link/src/Composer" isTestSource="false" packagePrefix="Composer\" />
+      <sourceFolder url="file://$MODULE_DIR$/.devbox/nix/profile/default-1-link/tests/Composer/Test" isTestSource="true" packagePrefix="Composer\Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/.devbox/nix/profile/default-3-link/src/Composer" isTestSource="false" packagePrefix="Composer\" />
+      <sourceFolder url="file://$MODULE_DIR$/.devbox/nix/profile/default-3-link/tests/Composer/Test" isTestSource="true" packagePrefix="Composer\Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/.devbox/nix/profile/default/src/Composer" isTestSource="false" packagePrefix="Composer\" />
+      <sourceFolder url="file://$MODULE_DIR$/.devbox/nix/profile/default/tests/Composer/Test" isTestSource="true" packagePrefix="Composer\Test\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/gabordemooij/redbean" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpcompatibility/php-compatibility" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/squizlabs/php_codesniffer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
