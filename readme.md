@@ -3,6 +3,7 @@ An autosaving daily form for up to 3 tasks a day with notes field. The form clea
 To add
 
 - [ ] Will add some way to refer to previous day's forms.
+- [ ] Might need a search if you're disciplined
 - [ ] frankenphp this
 
 # Setup
