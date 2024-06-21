@@ -84,7 +84,7 @@ if ($_POST) {
     </style>
 </head>
 <body>
-<form method="post" hx-post="/" hx-trigger="change, input delay:5s">
+<form method="post" hx-post="/" hx-trigger="change, input delay:5s" hx-swap="outerHTML">
     <h1>Daily Tasks for <?= $task->date ?></h1>
 
     <fieldset class="tasklist">
