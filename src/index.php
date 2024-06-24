@@ -52,24 +52,24 @@ function is_autofocus($task) {
         }
 
         html {
-            background: #9999cc;
+            background: rgba(153, 153, 204, 0.25);
             margin: 0;
             padding: 0;
         }
 
         body {
-            margin: 0;
-            min-height: 98vmin;
+            margin: .5rem;
             padding: 1rem;
-            max-width: 65ch;
             background: white;
             font: 16px/1.5 "Inter", sans-serif;
-            box-shadow: rebeccapurple 0 0 20px;
+            box-shadow: rgba(102, 51, 153, 0.1) 1.95px 1.95px 2.6px;
+            border-radius: 0.25rem;
         }
 
         fieldset {
             margin-bottom: 2rem;
-            border: 1px dashed purple;
+            border: 1px dashed rgba(128, 0, 128, 0.25);
+            border-radius: 0.25rem;
             font-weight: bold;
             color: purple;
         }
@@ -88,7 +88,10 @@ function is_autofocus($task) {
 
         label {
             display: block;
-            margin-bottom: 1rem;
+        }
+
+        .tasklist label {
+            margin-bottom: 0.5rem;
         }
 
         label input {
@@ -96,7 +99,6 @@ function is_autofocus($task) {
         }
 
         textarea {
-            width: 100%;
             height: 15rem;
             border-color: black;
             border-width: 0 0 0 0;
@@ -114,14 +116,27 @@ function is_autofocus($task) {
         }
 
         input[type=text] {
-            width: 80%;
             border-width: 0 0 1px 0;
+        }
+
+        input[type=checkbox] {
+            margin-right: 0.5rem;
         }
 
         h1 {
             margin-top: 0;
             font-weight: normal;
         }
+
+        .task-item {
+            display:flex;
+        }
+
+        .task-item :last-child {
+            flex:1
+        }
+
+
 
 
     </style>
