@@ -11,8 +11,8 @@ use RedBeanPHP\RedException\SQL;
 R::setup('sqlite:data.db');
 
 $date = date('Y-m-d');
-$task = R::findOne('task', ' date = ? ', [$date]) ?? R::dispense('task');
-$task->date = $date;
+$list = R::findOne('tasklist', ' date = ? ', [$date]) ?? R::dispense('tasklist');
+$list->date = $date;
 if ($_POST) {
     $allowed_keys = ['task1', 'task2', 'task3', 'done1', 'done2', 'done3', 'notes'];
     $_POST = array_intersect_key($_POST, array_flip($allowed_keys));
@@ -24,13 +24,17 @@ if ($_POST) {
         }
     }
     foreach ($_POST as $key => $value) {
-        $task[$key] = $value;
+        $list[$key] = $value;
     }
     try {
-        R::store($task);
+        R::store($list);
     } catch (SQL $e) {
         die($e->getMessage());
     }
+}
+
+function is_autofocus($task) {
+    return empty($task) && !$_POST ? 'autofocus="autofocus"' : '';
 }
 ?>
 <!DOCTYPE html>
@@ -123,28 +127,28 @@ if ($_POST) {
     </style>
 </head>
 <body>
-<form method="post" hx-post="/" hx-trigger="input delay:1s" hx-swap="morph:{ignoreActiveValue:true}">
-    <h1>Three Tasks for <?= $task->date ?></h1>
+<form method="post" hx-post="/" hx-trigger="input delay:1s" hx-swap="outerHTML">
+    <h1>Three Tasks for <?= $list->date ?></h1>
 
     <fieldset class="tasklist">
         <legend>Tasks</legend>
         <label class="task-item">
-            <input tabindex=90 type="checkbox" name="done1" id="done1" <?= $task->done1 ?>>
-            <input tabindex=20 type="text" name="task1" id="task1" value="<?= $task->task1 ?>">
+            <input tabindex=90 type="checkbox" name="done1" id="done1" <?= $list->done1 ?>>
+            <input tabindex=20 type="text" name="task1" id="task1" value="<?= $list->task1 ?>"  <?= is_autofocus($list['task1']) ?>>
         </label>
         <label class="task-item">
-            <input tabindex=91 type="checkbox" name="done2" id="done2" <?= $task->done2 ?>>
-            <input tabindex=21 type="text" name="task2" id="task2" value="<?= $task->task2 ?>">
+            <input tabindex=91 type="checkbox" name="done2" id="done2" <?= $list->done2 ?>>
+            <input tabindex=21 type="text" name="task2" id="task2" value="<?= $list->task2 ?>">
         </label>
         <label class="task-item">
-            <input tabindex=92 type="checkbox" name="done3" id="done3" <?= $task->done3 ?>>
-            <input tabindex=22 type="text" name="task3" id="task3" value="<?= $task->task3 ?>">
+            <input tabindex=92 type="checkbox" name="done3" id="done3" <?= $list->done3 ?>>
+            <input tabindex=22 type="text" name="task3" id="task3" value="<?= $list->task3 ?>">
         </label>
     </fieldset>
     <fieldset class="meta">
         <legend>Notes</legend>
         <label class="task-item">
-            <textarea tabindex=10 name="notes" id="notes"><?= $task->notes ?></textarea>
+            <textarea tabindex=10 name="notes" id="notes"><?= $list->notes ?></textarea>
         </label>
     </fieldset>
 </form>
