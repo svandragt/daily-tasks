@@ -11,7 +11,7 @@ use RedBeanPHP\RedException\SQL;
 R::setup('sqlite:data.db');
 
 $date = date('Y-m-d');
-$list = R::findOne('task-list', ' date = ? ', [$date]) ?? R::dispense('task-list');
+$list = R::findOne('tasklist', ' date = ? ', [$date]) ?? R::dispense('tasklist');
 $list->date = $date;
 if ($_POST) {
     $allowed_keys = ['task1', 'task2', 'task3', 'done1', 'done2', 'done3', 'notes'];
