@@ -71,7 +71,12 @@ function is_autofocus($task) {
             border: 1px dashed rgba(128, 0, 128, 0.25);
             border-radius: 0.25rem;
             font-weight: bold;
+
+        }
+
+        fieldset:focus-within {
             color: purple;
+            border: 1px dashed rgba(128, 0, 128, 0.5);
         }
 
         footer {
@@ -102,6 +107,7 @@ function is_autofocus($task) {
             height: 15rem;
             border-color: black;
             border-width: 0 0 0 0;
+            padding: 0.5vw;
         }
 
         input {
@@ -113,6 +119,7 @@ function is_autofocus($task) {
 
         input, textarea {
             font: 0.875em/1.2em "JetBrains Mono", "Roboto Mono", monospace;
+            color: #111;
         }
 
         input[type=text] {
@@ -124,8 +131,19 @@ function is_autofocus($task) {
         }
 
         h1 {
-            margin-top: 0;
-            font-weight: normal;
+            margin: 0 auto 0.5rem;
+            text-align: center;
+            color: rgba(153, 153, 204, 0.5);
+            text-shadow: 0 4px 4px #fff, 0 0px 0 rgba(128, 0, 128, 0.5), 0 4px 4px #fff;
+            letter-spacing: -0.085em;
+            font-size: 3rem;
+            opacity: 0.875;
+            line-height: 1em;
+            font-weight: 100;
+        }
+
+        h1 span {
+            color: rgba(99, 174, 227, 0.5);
         }
 
         .task-item {
@@ -143,10 +161,10 @@ function is_autofocus($task) {
 </head>
 <body>
 <form method="post" hx-post="/" hx-trigger="input delay:1s" hx-swap="outerHTML">
-    <h1>Three Tasks for <?= $list->date ?></h1>
+    <h1>Three Things for <span class="date"><?= $list->date ?></span></h1>
 
     <fieldset class="tasklist">
-        <legend>Tasks</legend>
+        <legend>Goals</legend>
         <label class="task-item">
             <input tabindex=90 type="checkbox" name="done1" id="done1" <?= $list->done1 ?>>
             <input tabindex=20 type="text" name="task1" id="task1" value="<?= $list->task1 ?>"  <?= is_autofocus($list['task1']) ?>>
