@@ -11,7 +11,7 @@ use RedBeanPHP\RedException\SQL;
 R::setup('sqlite:data.db');
 
 $date = date('Y-m-d');
-$list = R::findOne('tasklist', ' date = ? ', [$date]) ?? R::dispense('tasklist');
+$list = R::findOne('task-list', ' date = ? ', [$date]) ?? R::dispense('task-list');
 $list->date = $date;
 if ($_POST) {
     $allowed_keys = ['task1', 'task2', 'task3', 'done1', 'done2', 'done3', 'notes'];
@@ -33,9 +33,11 @@ if ($_POST) {
     }
 }
 
-function is_autofocus($task) {
-    return empty($task) && !$_POST ? 'autofocus="autofocus"' : '';
+function is_autofocus($task)
+{
+    return empty($task) && ! $_POST ? 'autofocus="autofocus"' : '';
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +45,7 @@ function is_autofocus($task) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>Three Tasks for <?= $date ?></title>
+    <title>Three Things for <?= $date ?></title>
     <script src="htmx.min.js?1.9.2"></script>
     <script src="idiomorph-ext.min.js"></script>
     <style>
@@ -95,7 +97,7 @@ function is_autofocus($task) {
             display: block;
         }
 
-        .tasklist label {
+        .task-list label {
             margin-bottom: 0.5rem;
         }
 
@@ -147,14 +149,12 @@ function is_autofocus($task) {
         }
 
         .task-item {
-            display:flex;
+            display: flex;
         }
 
         .task-item :last-child {
-            flex:1
+            flex: 1
         }
-
-
 
 
     </style>
@@ -163,11 +163,13 @@ function is_autofocus($task) {
 <form method="post" hx-post="/" hx-trigger="input delay:1s" hx-swap="outerHTML">
     <h1>Three Things for <span class="date"><?= $list->date ?></span></h1>
 
-    <fieldset class="tasklist">
+    <fieldset class="task-list">
         <legend>Goals</legend>
         <label class="task-item">
             <input tabindex=90 type="checkbox" name="done1" id="done1" <?= $list->done1 ?>>
-            <input tabindex=20 type="text" name="task1" id="task1" value="<?= $list->task1 ?>"  <?= is_autofocus($list['task1']) ?>>
+            <input tabindex=20 type="text" name="task1" id="task1" value="<?= $list->task1 ?>" <?= is_autofocus(
+                $list['task1']
+            ) ?>>
         </label>
         <label class="task-item">
             <input tabindex=91 type="checkbox" name="done2" id="done2" <?= $list->done2 ?>>
