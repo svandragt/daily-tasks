@@ -156,11 +156,24 @@ function is_autofocus($task)
             flex: 1
         }
 
+        #spinner {
+            opacity: 0;
+            transition: opacity 100ms ease-in-out;
+        }
+
+        .htmx-request #spinner {
+            opacity: 1
+        }
+
+        .htmx-request#spinner {
+            opacity: 1
+        }
+
 
     </style>
 </head>
 <body>
-<form method="post" hx-post="/" hx-trigger="input delay:1s" hx-swap="outerHTML">
+<form method="post" hx-post="/" hx-trigger="input delay:1s" hx-swap="outerHTML" hx-indicator="#spinner">
     <h1>Three Things for <span class="date"><?= $list->date ?></span></h1>
 
     <fieldset class="task-list">
@@ -186,6 +199,7 @@ function is_autofocus($task)
             <textarea tabindex=10 name="notes" id="notes"><?= $list->notes ?></textarea>
         </label>
     </fieldset>
+    <small id="spinner">Saving...</small>
 </form>
 </body>
 </html>
